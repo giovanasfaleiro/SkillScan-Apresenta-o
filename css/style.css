@@ -1,0 +1,203 @@
+/* Paleta de Cores e Variáveis Globais */
+:root {
+    --purple: #6A0DAD;
+    --purple-light: #9370DB;
+    --card-bg: #282828;
+    --border-purple-subtle: rgba(106, 13, 173, 0.4);
+    --text-light-gray: #E0E0E0; 
+    --text-medium-gray: #B0B0B0;
+}
+
+/* --- HIERARQUIA DE FONTES E CORES DE TEXTO --- */
+
+/* Fonte padrão e COR DE TEXTO MAIS CLARA para todo o site */
+body {
+    background-color: #121212;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light-gray); 
+}
+
+/* Ajusta a cor do texto secundário do Bootstrap para maior contraste */
+.text-secondary {
+    color: var(--text-medium-gray) !important; 
+}
+
+/* Fonte padrão para todos os títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF; /* Garante que títulos principais tenham contraste máximo */
+}
+
+
+/* --- ESTILOS DE BOTÕES CUSTOMIZADOS --- */
+
+/* Base para todos os botões customizados com transição */
+.btn-primary-custom, 
+.btn-outline-primary-custom, 
+.btn-secondary-custom,
+#cta-final .btn {
+    transition: transform 0.2s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+/* Efeito de hover para crescer */
+.btn-primary-custom:hover, 
+.btn-outline-primary-custom:hover, 
+.btn-secondary-custom:hover,
+#cta-final .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Cores e estilos dos botões */
+.btn-primary-custom {
+    background-color: var(--purple);
+    border-color: var(--purple);
+    color: #fff;
+}
+.btn-primary-custom:hover {
+    background-color: var(--purple-light);
+    border-color: var(--purple-light);
+    color: #fff;
+}
+.btn-outline-primary-custom {
+    color: var(--purple);
+    border-color: var(--purple);
+}
+.btn-outline-primary-custom:hover {
+    background-color: var(--purple);
+    border-color: var(--purple);
+    color: #fff;
+}
+.btn-secondary-custom {
+    background-color: #E0E0E0;
+    color: var(--purple);
+    border-color: #E0E0E0;
+}
+.btn-secondary-custom:hover {
+    background-color: #d0d0d0;
+    border-color: #d0d0d0;
+    color: var(--purple);
+}
+
+/* --- DEMAIS ESTILOS --- */
+
+.text-primary-custom {
+    color: var(--purple) !important;
+}
+
+.nav-link {
+    color: var(--text-medium-gray);
+    font-weight: 500;
+}
+.nav-link:hover, .navbar-nav .nav-link.active {
+    color: var(--purple-light);
+}
+
+/* Seção Hero */
+.hero {
+    background-image: radial-gradient(ellipse at 50% 40%, rgba(106, 13, 173, 0.15) 0%, transparent 60%);
+}
+.texto-inicial {
+    font-size: 2.5rem;
+    color: #FFFFFF; /* Garante que o texto "Descubra o Poder do" seja branco puro */
+}
+.logo-navbar {
+    height: 40px;
+}
+.imagem_principal {
+    width: 400px;
+    height: auto;
+}
+
+
+/* Animação do Indicador de Scroll */
+.scroll-indicator {
+    animation: bobbing 2s infinite ease-in-out;
+}
+@keyframes bobbing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Estilo para features "AI", "GitHub", "PDF" */
+.feature-item .feature-keyword {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--purple-light);
+    line-height: 1;
+    text-shadow: 0 0 7px rgba(147, 112, 219, 0.6);
+    transition: transform 0.3s ease;
+}
+.feature-item:hover .feature-keyword {
+    transform: scale(1.05);
+}
+
+/* Estilo dos Cards de Benefícios */
+.card-custom {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-purple-subtle);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-custom:hover {
+    transform: translateY(-7px) scale(1.02);
+    border-color: var(--purple);
+    box-shadow: 0 5px 20px rgba(106, 13, 173, 0.35);
+}
+
+/* Ícones dentro dos cards */
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(106, 13, 173, 0.1);
+    color: var(--purple-light);
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+.card-custom:hover .icon-circle {
+    transform: scale(1.1);
+}
+
+/* Citação na Seção Missão */
+.missao-quote {
+    border-left: 4px solid var(--purple);
+    background-color: var(--card-bg);
+    color: var(--purple-light);
+}
+
+/* Ajustes Finais para o Header por causa do `fixed-top` */
+body {
+    padding-top: 70px;
+}
+
+
+@media (min-width: 992px) {
+    
+    /* 1. Define o container da navbar como o ponto de referência */
+    .navbar .container {
+        position: relative;
+    }
+
+    /* 2. Remove o comportamento flex padrão do 'collapse' para não interferir */
+    .navbar-collapse {
+        display: contents;
+    }
+    
+    /* 3. Centraliza os links de forma absoluta */
+    .navbar-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 4. Empurra os botões para a extrema direita */
+    #navbarNav .d-flex {
+        margin-left: auto;
+    }
+}
