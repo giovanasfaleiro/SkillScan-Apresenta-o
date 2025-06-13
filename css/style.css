@@ -201,3 +201,67 @@ body {
         margin-left: auto;
     }
 }
+
+/* Footer specific styles (if not already defined) */
+.footer {
+    background-color: #1a1a1a; /* Adjust to your footer background color */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Partner Logos Container */
+.partner-logos-container {
+    padding: 30px 0; /* Add some vertical padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional: a subtle separator */
+    margin-top: 30px; /* Space from the content above */
+}
+
+/* Partner Carousel - Using Flexbox for layout */
+.partner-carousel {
+    display: flex;
+    justify-content: center; /* Center the logos horizontally */
+    align-items: center;
+    gap: 40px; /* Space between logos */
+    flex-wrap: wrap; /* Allow logos to wrap to the next line on smaller screens */
+    max-width: 960px; /* Optional: Limit width to keep logos from spreading too wide */
+    margin: 0 auto; /* Center the carousel container itself */
+}
+
+.partner-carousel img {
+    max-height: 80px; /* Adjust based on your logo sizes */
+    width: auto; /* Maintain aspect ratio */
+    filter: grayscale(100%); /* Optional: Make logos grayscale */
+    opacity: 0.7; /* Optional: Reduce opacity */
+    transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Optional: Hover effect for logos */
+.partner-carousel img:hover {
+    filter: grayscale(0%); /* Full color on hover */
+    opacity: 1; /* Full opacity on hover */
+}
+
+/* Footer Bottom (copyright) */
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness (adjust as needed) */
+@media (max-width: 768px) {
+    .partner-carousel {
+        gap: 20px; /* Reduce gap on smaller screens */
+    }
+    .partner-carousel img {
+        max-height: 60px; /* Smaller logos on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-carousel {
+        flex-direction: column; /* Stack logos vertically on very small screens */
+    }
+}
