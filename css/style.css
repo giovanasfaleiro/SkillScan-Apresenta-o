@@ -265,3 +265,7 @@ body {
         flex-direction: column; /* Stack logos vertically on very small screens */
     }
 }
+
+.contact-label {
+  font-size: 0.9rem;
+  color: var(--text-medium-gray); }
